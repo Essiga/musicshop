@@ -1,6 +1,6 @@
 package application;
 
-import domain.LineItem;
+import domain.CartLineItem;
 import domain.ShoppingCart;
 import infrastructure.ShoppingCartRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,9 +40,9 @@ public class ShoppingCartServiceTest {
     void initMockAndService() throws RemoteException {
         UUID ownerId = UUID.randomUUID();
 
-        List<LineItem> lineItems = new LinkedList<>();
-        lineItems.add(new LineItem(MediumType.CD, "24K Magic", 12, BigDecimal.valueOf(18)));
-        lineItems.add(new LineItem(MediumType.CD,"BAM BAM", 20, BigDecimal.valueOf(36)));
+        List<CartLineItem> lineItems = new LinkedList<>();
+        lineItems.add(new CartLineItem(MediumType.CD, "24K Magic", 12, BigDecimal.valueOf(18)));
+        lineItems.add(new CartLineItem(MediumType.CD,"BAM BAM", 20, BigDecimal.valueOf(36)));
 
         givenCart = new ShoppingCart(ownerId, lineItems);
 
